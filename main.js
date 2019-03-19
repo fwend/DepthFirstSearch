@@ -1,5 +1,5 @@
 const dfs = (start, graph) => {
-    const visited = new Map([[start, 1]]);
+    const visited = new Set([start]);
     const stack = [start];
     
     console.log("visit " + start);
@@ -13,7 +13,7 @@ const dfs = (start, graph) => {
         
         if (next) {
             console.log("visit " + next);
-            visited.set(next, 1);
+            visited.add(next);
             stack.push(next);
         } else {
             stack.pop();
